@@ -26,7 +26,7 @@
     --neutral-dark-blue: hsl(219, 12%, 42%);
     --neutral-very-dark-blue: hsl(224, 21%, 14%);
 
-    /* Font */
+    /* Fonts */
 
     --ff-reg: 'Plus Jakarta Sans';
     --ff-med: 'Plus Jakarta Sans-Medium';
@@ -64,7 +64,7 @@ body {
 }
 
 .notifications-container {
-    max-width: 70%;
+    max-width: 55%;
     margin: 3rem auto;
     background-color: var(--neutral-white);
     border-radius: 10px;
