@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans-Extra Bold';
+    src: url(./assets/fonts/static/PlusJakartaSans-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans-Medium';
+    src: url(./assets/fonts/static/PlusJakartaSans-Medium.ttf);
+}
+
+:root {
+    /* Colors */
+
+    --primary-red: hsl(1, 90%, 64%);
+    --primary-blue: hsl(219, 85%, 26%);
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-very-light-blue: hsl(210, 60%, 98%);
+    --neutral-light-blue-1: hsl(211, 68%, 94%);
+    --neutral-light-blue-2: hsl(205, 33%, 90%);
+    --neutral-blue: hsl(219, 14%, 63%);
+    --neutral-dark-blue: hsl(219, 12%, 42%);
+    --neutral-very-dark-blue: hsl(224, 21%, 14%);
+
+    /* Font */
+
+    --ff-reg: 'Plus Jakarta Sans';
+    --ff-med: 'Plus Jakarta Sans-Medium';
+    --ff-bold: 'Plus Jakarta Sans-Extra Bold';
+    --fs: 16px;
+    --fw-500: 500;
+    --fw-800: 800;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--ff-reg);
+}
+
+body {
+    background-color: var(--neutral-very-light-blue);
+}
+
+.link {
+    color: var(--neutral-very-dark-blue);
+    font-family: var(--ff-bold);
+    text-decoration: none;
+}
+
+.link__light {
+    color: var(--neutral-dark-blue);
+}
+
+.link:focus,
+.link:hover {
+    color: var(--primary-blue);
+}
+
+.notifications-container {
+    max-width: 70%;
+    margin: 3rem auto;
+    background-color: var(--neutral-white);
+    border-radius: 10px;
+
+}
+
+@media (max-width: 700px) {
+    .notifications-container {
+        max-width: 100%;
+        margin: 0 0;
+    }
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    padding: 1.5rem;
+    align-items: flex-end;
+}
+
+.header--title {
+    padding-right: 0.5rem;
+    color: var(--neutral-very-dark-blue);
+    font-family: var(--ff-bold);
+    font-size: 1.2rem;
+
+}
+
+.header--info {
+    padding: 0.1rem 0.6rem;
+    color: var(--neutral-white);
+    font-weight: var(--fw-800);
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+}
+
+.header--button {
+    flex: 1;
+    text-align: right;
+    color: var(--neutral-dark-blue);
+    font-family: var(--ff-reg);
+    cursor: pointer;
+}
+
+.notifications {
+    padding-inline: 2rem;
+}
+
+.notification {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-areas: "img not pic"
+                         "img time pic"
+                         "img message message";
+}
+
+.notification--img {
+    grid-area: img;
+}
+
+.notification--img > img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.notification--text {
+    grid-area: not;
+    font-family: var(--ff-reg);
+    font-weight: var(--fw-800);
+    color: var(--neutral-dark-blue);
+}
+
+.notification--time {
+    grid-area: time;
+    color: var(--neutral-blue);
+    font-family: var(--ff-med);
+}
+
+.notification--message {
+    grid-area: message;
+    font-family: var(--ff-med);
+    color: var(--neutral-dark-blue);
+    border: 1px solid var(--neutral-light-blue-2);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.notification--message:hover,
+.notification--message:focus {
+    background-color: var(--neutral-light-blue-1);
+}
+
+.notification--picture {
+    grid-area: pic;
+}
+
+.notification--picture img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.unread {
+    background-color: var(--neutral-very-light-blue);
+}
+
+.unread > .notification--text::after {
+    content:'';
+    display: inline-block;
+    margin: 0 0 0.05rem 0.05rem;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-red);
+    border-radius: 100%;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
